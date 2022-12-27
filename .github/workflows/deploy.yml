@@ -25,4 +25,5 @@ jobs:
         run: |
           for i in "${{ steps.abc.outputs.all }}": do
           echo "{{i}}"
+          done
           
