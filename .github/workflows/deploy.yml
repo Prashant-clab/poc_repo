@@ -32,5 +32,5 @@ jobs:
               echo "It's frontend!"
             fi
           done
-          echo ${env.backend_value}
+          echo ${backend_value}
           
