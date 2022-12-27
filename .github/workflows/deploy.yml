@@ -25,6 +25,9 @@ jobs:
         run: |
           for changed_file in ${{ steps.abc.outputs.all }}; do
             echo "Do something with this ${changed_file}."
-            contains('${changed_file}', 'backend')
+            if (contains(${changed_file}, 'backend'))
+            then
+                    echo "$(( counter / 1000 ))"
+            fi
           done
           
