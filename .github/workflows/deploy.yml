@@ -16,16 +16,13 @@ jobs:
           format: space-delimited
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Printing
+        id: filenames
         run: |
           echo "All:"
           echo "${{ steps.abc.outputs.all }}"
-          echo "Added:"
-          echo "${{ steps.abc.outputs.added }}"
-          echo "Removed:"
-          echo "${{ steps.abc.outputs.removed }}"
-          echo "Renamed:"
-          echo "${{ steps.abc.outputs.renamed }}"
-          echo "Modified:"
-          echo "${{ steps.abc.outputs.modified }}"
-          echo "Added+Modified:"
-          echo "${{ steps.abc.outputs.added_modified }}"
+      - name: Looping file name
+        id: looping
+        run: |
+          for i in "${{ steps.abc.outputs.all }}": do
+          echo "{{i}}"
+          
