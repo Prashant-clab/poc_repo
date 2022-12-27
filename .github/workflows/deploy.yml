@@ -19,6 +19,7 @@ jobs:
             src:
               - 'backend/**'
           ref: 'main'
+          base: ''
           working-directory: ''
 
       - if: steps.changes.output.src == 'true'
