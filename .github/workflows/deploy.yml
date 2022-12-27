@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-env:
-  backend_value: 0
-  frontend_value: 0
 
 jobs:
   # JOB to run change detection
