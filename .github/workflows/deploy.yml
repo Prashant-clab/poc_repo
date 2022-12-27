@@ -18,9 +18,7 @@ jobs:
           filters: |
             src:
               - 'backend/**'
-          ref: 'main'
-          base: ''
-          working-directory: ''
+          base: ${{ github.ref }}
 
       - if: steps.changes.output.src == 'true'
         run: |
