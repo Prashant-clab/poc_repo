@@ -18,6 +18,7 @@ jobs:
           filters: |
             src:
               - 'backend/**'
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - if: steps.changes.output.src == 'true'
         run: |
