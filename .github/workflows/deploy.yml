@@ -42,4 +42,11 @@ jobs:
     steps:
       - run: |
           echo "It's in frontend!"
+
+  both:
+    needs: [backend, frontend] 
+    runs-on: ubuntu-latest  
+    steps:
+      - run: |
+          echo "It's in both!"      
           
