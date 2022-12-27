@@ -24,7 +24,7 @@ jobs:
           for changed_file in ${{ steps.abc.outputs.all }}; do
             echo "Do something with this ${changed_file}."
             echo "${backend_value}"
-            if [[ $changed_file == *"backend"*]]; then
+            if [[ $changed_file == *"backend"* ]]; then
               echo "It's in backend!"
               env.backend: 1
             fi
