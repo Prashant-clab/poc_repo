@@ -13,19 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: dorny/paths-filter@v2
-        id: filter
+        id: changes
         with:
-          # Enable listing of files matching each filter.
-          # Paths to files will be available in `${FILTER_NAME}_files` output variable.
-          # Paths will be formatted as JSON array
-          list-files: json
-
-          # In this example all changed files are passed to the following action to do
-          # some custom processing.
           filters: |
-            changed:
+            src:
               - 'backend/**'
-      - name: Lint Markdown
+
+      - if: steps.changes.output.src == 'true'
         run: |
-          echo "files ${ steps.filter.outputs.changed_files }"
+          echo "HAHAHHAHAHA"
           
