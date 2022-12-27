@@ -19,6 +19,7 @@ jobs:
             src:
               - 'backend/**'
           token: ${{ secrets.GITHUB_TOKEN }}
+          working-directory: ''
 
       - if: steps.changes.output.src == 'true'
         run: |
