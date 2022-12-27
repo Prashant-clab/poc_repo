@@ -17,7 +17,7 @@ jobs:
         with:
           filters: |
             src:
-              - 'backend/**'
+              - '**'
 
       - if: steps.changes.output.src == 'true'
         run: |
