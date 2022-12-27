@@ -12,25 +12,21 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.1.0
-      - uses: jitterbit/get-changed-files@v1
-        id: abc
+      - uses: dorny/paths-filter@v2
+        id: filter
         with:
-          format: space-delimited
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Looping file name
-        id: looping
-        run: |
-          for changed_file in ${{ steps.abc.outputs.all }}; do
-            echo "Do something with this ${changed_file}."
-            echo "${backend_value}"
-            if [[ $changed_file == *"backend"* ]]; then
-              echo "It's in backend!"
-              set backend: 1
-            fi
-            if [[ $changed_file == *"frontend"* ]]; then
-              echo "It's frontend!"
-            fi
-          done
-          echo ${backend_value}
+          # Enable listing of files matching each filter.
+          # Paths to files will be available in `${FILTER_NAME}_files` output variable.
+          # Paths will be formatted as JSON array
+          list-files: json
+
+          # In this example all changed files are passed to the following action to do
+          # some custom processing.
+          filters: |
+            changed:
+              - '**'
+      - name: Lint Markdown
+        uses: johndoe/some-action@v1
+        with:
+          files: ${{ steps.filter.outputs.changed_files }}
           
