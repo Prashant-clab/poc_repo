@@ -23,7 +23,7 @@ jobs:
       - name: Looping file name
         id: looping
         run: |
-          for changed_file in ${{ steps.files.outputs.all }}; do
+          for changed_file in ${{ steps.abc.outputs.all }}; do
             echo "Do something with this ${changed_file}."
           done
           
