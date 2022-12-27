@@ -26,7 +26,6 @@ jobs:
             changed:
               - '**'
       - name: Lint Markdown
-        uses: johndoe/some-action@v1
-        with:
-          files: ${{ steps.filter.outputs.changed_files }}
+        run: |
+          echo "files: ${{ steps.filter.outputs.changed_files }}"
           
