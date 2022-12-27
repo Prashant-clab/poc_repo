@@ -26,7 +26,7 @@ jobs:
             echo "${backend_value}"
             if [[ $changed_file == *"backend"* ]]; then
               echo "It's in backend!"
-              env.backend: 1
+              set env.backend: 1
             fi
             if [[ $changed_file == *"frontend"* ]]; then
               echo "It's frontend!"
