@@ -18,7 +18,7 @@ jobs:
           filters: |
             src:
               - 'backend/**'
-          ref: ''
+          ref: 'main'
           working-directory: ''
 
       - if: steps.changes.output.src == 'true'
