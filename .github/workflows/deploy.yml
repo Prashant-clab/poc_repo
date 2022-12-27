@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+env:
+  backend_value: 0
+  frontend_value: 0
 
 jobs:
   test:
@@ -25,7 +28,7 @@ jobs:
         run: |
           for changed_file in ${{ steps.abc.outputs.all }}; do
             echo "Do something with this ${changed_file}."
-            if [[ $changed_file == *"backend"* ]]; then
+            if [[ $changed_file == *"backend"* && env.backend_value==0]]; then
               echo "It's in backend!"
             fi
             if [[ $changed_file == *"frontend"* ]]; then
