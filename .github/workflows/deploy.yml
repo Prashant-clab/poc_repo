@@ -24,8 +24,8 @@ jobs:
           # some custom processing.
           filters: |
             changed:
-              - './backend/**'
+              - 'backend/**'
       - name: Lint Markdown
         run: |
-          echo "files: ${{ steps.filter.outputs.changed_files }}"
+          echo "files ${ steps.filter.outputs.changed_files }"
           
