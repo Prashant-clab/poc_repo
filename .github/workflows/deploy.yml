@@ -10,8 +10,7 @@ jobs:
   changes:
     runs-on: ubuntu-latest
     # Required permissions
-    permissions:
-      pull-requests: read|write
+    permissions: read-all|write-all
     # Set job outputs to values from filter step
     outputs:
       backend: ${{ steps.filter.outputs.backend }}
