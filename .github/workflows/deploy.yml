@@ -30,12 +30,8 @@ jobs:
     needs: changes
     if: ${{ needs.changes.outputs.backend == 'true' }}
     runs-on: ubuntu-latest
-    steps:
-      - run: |
-          ls -l
-          cd backend/test/checking
-          ls
-          echo "It's in backend!"
+    run: |
+      ls -l
 
   # JOB to build and test frontend code
   frontend:
