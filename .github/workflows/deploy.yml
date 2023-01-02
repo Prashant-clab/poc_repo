@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          cd ./backend/test/checking
+          cd backend
           echo "It's in backend!"
 
   # JOB to build and test frontend code
@@ -50,5 +50,7 @@ jobs:
     if: always() && (needs.backend.result != 'failure' || needs.frontend.result != 'failure')
     steps:
       - run: |
+          cd backend
+          mkdir python
           echo "It's in both!"      
           
