@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          cd backend/test/checking
+          cd ./backend/test/checking
           echo "It's in backend!"
 
   # JOB to build and test frontend code
