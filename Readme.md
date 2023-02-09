@@ -22,17 +22,17 @@
 
 ### TABLE CDR PLATFORM URL
     This table contains the cdr-fio API URL for the project. It has the columns listed below:
-		|--------------------------------------------------------------------------------------------------------------------|
+	|--------------------------------------------------------------------------------------------------------------------|
         |"SNO."  | "Name"        | "Type"     | "Description"                                                                |
-	    |:-------|---------------|------------|------------------------------------------------------------------------------|
-		|1       | `cdr_api_url` | varchar    | This column is used to store the cdr API URL.                                |
-		|2.      | `updated_at ` | DateTime   | This column is used to store the timestamp at which the URL has been updated.|
+	|:-------|---------------|------------|------------------------------------------------------------------------------|
+	|1       | `cdr_api_url` | varchar    | This column is used to store the cdr API URL.                                |
+	|2.      | `updated_at ` | DateTime   | This column is used to store the timestamp at which the URL has been updated.|
         |--------------------------------------------------------------------------------------------------------------------|
 ### TABLE USERS
     This table is used to record the data of users who has sent the request on cdr-fio. It has the columns listed below:
         |---------------------------------------------------------------------------------------------------------------------------------|
-		|"SNO."  | "Name"         | "Type"       | "Description"                                                                          |
-	    |:-------|----------------|--------------|----------------------------------------------------------------------------------------|
+	|"SNO."  | "Name"         | "Type"       | "Description"                                                                          |
+	|:-------|----------------|--------------|----------------------------------------------------------------------------------------|
         |1.      | `fio_user_id`  |  varchar     | This column is used to store the unique user_id from which we got the request.         |
         |2.      | `created_at`   |  DateTime    | This column is used to store the timestamp on which this entry is created in the table.|
         |3.      | `updated_at`   |  DateTime    | This column is used to store the timestamp on which this user sent the last request.   |
